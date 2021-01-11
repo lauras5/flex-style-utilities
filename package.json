@@ -1,0 +1,24 @@
+{
+  "name": "flex-style-utilities",
+  "version": "0.1.0",
+  "description": "flex style utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALMaclaine/flex-style-utilities.git"
+  },
+  "keywords": [
+    "flex",
+    "style",
+    "utilities"
+  ],
+  "author": "Alessandro Maclaine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ALMaclaine/flex-style-utilities/issues"
+  },
+  "homepage": "https://github.com/ALMaclaine/flex-style-utilities#readme"
+}
