@@ -369,22 +369,22 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
+    	child_ctx[13] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
+    	child_ctx[16] = list[i];
     	return child_ctx;
     }
 
-    // (26:4) {#each Array(numItems).fill(0).map((e, i) => i) as i}
+    // (27:4) {#each Array(numItems).fill(0).map((e, i) => i) as i}
     function create_each_block_1(ctx) {
     	let div;
     	let t0;
     	let t1;
-    	let t2_value = /*i*/ ctx[14] + "";
+    	let t2_value = /*i*/ ctx[16] + "";
     	let t2;
 
     	const block = {
@@ -394,7 +394,7 @@ var app = (function () {
     			t1 = text(" #");
     			t2 = text(t2_value);
     			attr_dev(div, "class", "item svelte-2vvj8j");
-    			add_location(div, file, 26, 8, 754);
+    			add_location(div, file, 27, 8, 790);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -414,17 +414,17 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(26:4) {#each Array(numItems).fill(0).map((e, i) => i) as i}",
+    		source: "(27:4) {#each Array(numItems).fill(0).map((e, i) => i) as i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (33:8) {#each classes as tmpClass}
+    // (34:8) {#each classes as tmpClass}
     function create_each_block(ctx) {
     	let option;
-    	let t_value = /*tmpClass*/ ctx[11] + "";
+    	let t_value = /*tmpClass*/ ctx[13] + "";
     	let t;
     	let option_value_value;
 
@@ -432,18 +432,18 @@ var app = (function () {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = option_value_value = /*tmpClass*/ ctx[11];
+    			option.__value = option_value_value = /*tmpClass*/ ctx[13];
     			option.value = option.__value;
-    			add_location(option, file, 33, 12, 922);
+    			add_location(option, file, 34, 12, 958);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
     			append_dev(option, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*classes*/ 1 && t_value !== (t_value = /*tmpClass*/ ctx[11] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*classes*/ 1 && t_value !== (t_value = /*tmpClass*/ ctx[13] + "")) set_data_dev(t, t_value);
 
-    			if (dirty & /*classes*/ 1 && option_value_value !== (option_value_value = /*tmpClass*/ ctx[11])) {
+    			if (dirty & /*classes*/ 1 && option_value_value !== (option_value_value = /*tmpClass*/ ctx[13])) {
     				prop_dev(option, "__value", option_value_value);
     				option.value = option.__value;
     			}
@@ -457,7 +457,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(33:8) {#each classes as tmpClass}",
+    		source: "(34:8) {#each classes as tmpClass}",
     		ctx
     	});
 
@@ -483,9 +483,14 @@ var app = (function () {
     	let option4;
     	let option5;
     	let option6;
+    	let t9;
+    	let select3;
+    	let option7;
+    	let option8;
+    	let option9;
     	let mounted;
     	let dispose;
-    	let each_value_1 = Array(/*numItems*/ ctx[4]).fill(0).map(func);
+    	let each_value_1 = Array(/*numItems*/ ctx[5]).fill(0).map(func);
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
 
@@ -535,40 +540,58 @@ var app = (function () {
     			option5.textContent = "flex--baseline";
     			option6 = element("option");
     			option6.textContent = "flex--stretch";
+    			t9 = space();
+    			select3 = element("select");
+    			option7 = element("option");
+    			option8 = element("option");
+    			option8.textContent = "flex--wrap";
+    			option9 = element("option");
+    			option9.textContent = "flex--wrap-reverse";
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./flex-style-utilities.css");
-    			add_location(link, file, 21, 4, 558);
-    			attr_dev(div0, "class", div0_class_value = "page " + /*flexClass*/ ctx[1] + " " + /*justClass*/ ctx[2] + " " + /*alignClass*/ ctx[3] + " svelte-2vvj8j");
-    			add_location(div0, file, 24, 0, 632);
-    			if (/*flexClass*/ ctx[1] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[5].call(select0));
-    			add_location(select0, file, 31, 4, 842);
+    			add_location(link, file, 22, 4, 582);
+    			attr_dev(div0, "class", div0_class_value = "page " + /*flexClass*/ ctx[1] + " " + /*justClass*/ ctx[2] + " " + /*alignClass*/ ctx[3] + " " + /*wrapClass*/ ctx[4] + " svelte-2vvj8j");
+    			add_location(div0, file, 25, 0, 656);
+    			if (/*flexClass*/ ctx[1] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[6].call(select0));
+    			add_location(select0, file, 32, 4, 878);
     			option0.__value = "";
     			option0.value = option0.__value;
-    			add_location(option0, file, 38, 8, 1025);
+    			add_location(option0, file, 39, 8, 1061);
     			option1.__value = "flex--space-between";
     			option1.value = option1.__value;
-    			add_location(option1, file, 39, 8, 1051);
+    			add_location(option1, file, 40, 8, 1087);
     			option2.__value = "flex--space-around";
     			option2.value = option2.__value;
-    			add_location(option2, file, 40, 8, 1096);
+    			add_location(option2, file, 41, 8, 1132);
     			option3.__value = "flex--space-evenly";
     			option3.value = option3.__value;
-    			add_location(option3, file, 41, 8, 1140);
-    			if (/*justClass*/ ctx[2] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[6].call(select1));
-    			add_location(select1, file, 37, 4, 985);
+    			add_location(option3, file, 42, 8, 1176);
+    			if (/*justClass*/ ctx[2] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[7].call(select1));
+    			add_location(select1, file, 38, 4, 1021);
     			option4.__value = "";
     			option4.value = option4.__value;
-    			add_location(option4, file, 45, 8, 1236);
+    			add_location(option4, file, 46, 8, 1272);
     			option5.__value = "flex--baseline";
     			option5.value = option5.__value;
-    			add_location(option5, file, 46, 8, 1262);
+    			add_location(option5, file, 47, 8, 1298);
     			option6.__value = "flex--stretch";
     			option6.value = option6.__value;
-    			add_location(option6, file, 47, 8, 1302);
-    			if (/*alignClass*/ ctx[3] === void 0) add_render_callback(() => /*select2_change_handler*/ ctx[7].call(select2));
-    			add_location(select2, file, 44, 4, 1195);
+    			add_location(option6, file, 48, 8, 1338);
+    			if (/*alignClass*/ ctx[3] === void 0) add_render_callback(() => /*select2_change_handler*/ ctx[8].call(select2));
+    			add_location(select2, file, 45, 4, 1231);
+    			option7.__value = "";
+    			option7.value = option7.__value;
+    			add_location(option7, file, 52, 8, 1428);
+    			option8.__value = "flex--wrap";
+    			option8.value = option8.__value;
+    			add_location(option8, file, 53, 8, 1454);
+    			option9.__value = "flex--wrap-reverse";
+    			option9.value = option9.__value;
+    			add_location(option9, file, 54, 8, 1490);
+    			if (/*wrapClass*/ ctx[4] === void 0) add_render_callback(() => /*select3_change_handler*/ ctx[9].call(select3));
+    			add_location(select3, file, 51, 4, 1388);
     			attr_dev(div1, "class", "controls svelte-2vvj8j");
-    			add_location(div1, file, 30, 0, 815);
+    			add_location(div1, file, 31, 0, 851);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -604,20 +627,27 @@ var app = (function () {
     			append_dev(select2, option5);
     			append_dev(select2, option6);
     			select_option(select2, /*alignClass*/ ctx[3]);
+    			append_dev(div1, t9);
+    			append_dev(div1, select3);
+    			append_dev(select3, option7);
+    			append_dev(select3, option8);
+    			append_dev(select3, option9);
+    			select_option(select3, /*wrapClass*/ ctx[4]);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[5]),
-    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[6]),
-    					listen_dev(select2, "change", /*select2_change_handler*/ ctx[7])
+    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[6]),
+    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[7]),
+    					listen_dev(select2, "change", /*select2_change_handler*/ ctx[8]),
+    					listen_dev(select3, "change", /*select3_change_handler*/ ctx[9])
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*Array, numItems, flexClass*/ 18) {
-    				each_value_1 = Array(/*numItems*/ ctx[4]).fill(0).map(func);
+    			if (dirty & /*Array, numItems, flexClass*/ 34) {
+    				each_value_1 = Array(/*numItems*/ ctx[5]).fill(0).map(func);
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -640,7 +670,7 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*flexClass, justClass, alignClass, classes*/ 15 && div0_class_value !== (div0_class_value = "page " + /*flexClass*/ ctx[1] + " " + /*justClass*/ ctx[2] + " " + /*alignClass*/ ctx[3] + " svelte-2vvj8j")) {
+    			if (dirty & /*flexClass, justClass, alignClass, wrapClass, classes*/ 31 && div0_class_value !== (div0_class_value = "page " + /*flexClass*/ ctx[1] + " " + /*justClass*/ ctx[2] + " " + /*alignClass*/ ctx[3] + " " + /*wrapClass*/ ctx[4] + " svelte-2vvj8j")) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
@@ -678,6 +708,10 @@ var app = (function () {
 
     			if (dirty & /*alignClass*/ 8) {
     				select_option(select2, /*alignClass*/ ctx[3]);
+    			}
+
+    			if (dirty & /*wrapClass*/ 16) {
+    				select_option(select3, /*wrapClass*/ ctx[4]);
     			}
     		},
     		i: noop,
@@ -727,6 +761,7 @@ var app = (function () {
     	let flexClass = classes[0];
     	let justClass = "";
     	let alignClass = "";
+    	let wrapClass = "";
     	let numItems = 3;
     	const writable_props = [];
 
@@ -750,6 +785,11 @@ var app = (function () {
     		$$invalidate(3, alignClass);
     	}
 
+    	function select3_change_handler() {
+    		wrapClass = select_value(this);
+    		$$invalidate(4, wrapClass);
+    	}
+
     	$$self.$capture_state = () => ({
     		directions,
     		vOrientations,
@@ -758,6 +798,7 @@ var app = (function () {
     		flexClass,
     		justClass,
     		alignClass,
+    		wrapClass,
     		numItems
     	});
 
@@ -766,7 +807,8 @@ var app = (function () {
     		if ("flexClass" in $$props) $$invalidate(1, flexClass = $$props.flexClass);
     		if ("justClass" in $$props) $$invalidate(2, justClass = $$props.justClass);
     		if ("alignClass" in $$props) $$invalidate(3, alignClass = $$props.alignClass);
-    		if ("numItems" in $$props) $$invalidate(4, numItems = $$props.numItems);
+    		if ("wrapClass" in $$props) $$invalidate(4, wrapClass = $$props.wrapClass);
+    		if ("numItems" in $$props) $$invalidate(5, numItems = $$props.numItems);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -778,10 +820,12 @@ var app = (function () {
     		flexClass,
     		justClass,
     		alignClass,
+    		wrapClass,
     		numItems,
     		select0_change_handler,
     		select1_change_handler,
-    		select2_change_handler
+    		select2_change_handler,
+    		select3_change_handler
     	];
     }
 

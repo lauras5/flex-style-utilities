@@ -15,6 +15,7 @@
     let flexClass = classes[0];
     let justClass = '';
     let alignClass = '';
+    let wrapClass = '';
     let numItems = 3;
 </script>
 
@@ -22,7 +23,7 @@
     <link rel="stylesheet" href="./flex-style-utilities.css">
 </svelte:head>
 
-<div class="page {flexClass} {justClass} {alignClass}">
+<div class="page {flexClass} {justClass} {alignClass} {wrapClass}">
     {#each Array(numItems).fill(0).map((e, i) => i) as i}
         <div class="item">{flexClass} #{i}</div>
     {/each}
@@ -46,6 +47,12 @@
         <option></option>
         <option>flex--baseline</option>
         <option>flex--stretch</option>
+    </select>
+
+    <select bind:value={wrapClass}>
+        <option></option>
+        <option>flex--wrap</option>
+        <option>flex--wrap-reverse</option>
     </select>
 </div>
 
